@@ -1,0 +1,36 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "Angular Workshop",
+  "main": "dist/server.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "watch:build": "tsc --watch",
+    "watch:server": "nodemon dist/server.js -- dev --watch dist",
+    "start": "npm-run-all clean --parallel watch:build watch:server --print-label",
+    "test": "standard"
+  },
+  "author": "Dan Ichim",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "firebase-admin": "^5.4.3",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.1",
+    "typescript": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.7",
+    "@types/dotenv": "^4.0.2",
+    "@types/express": "^4.0.39",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^8.0.47",
+    "body-parser": "^1.18.2",
+    "eslint": "^4.10.0",
+    "morgan": "^1.9.0",
+    "rimraf": "^2.6.2",
+    "standard": "^10.0.3",
+    "tslint": "^5.8.0"
+  }
+}
