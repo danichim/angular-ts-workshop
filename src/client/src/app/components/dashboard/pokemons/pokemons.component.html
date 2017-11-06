@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <th>
+      #
+    </th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Height</th>
+    <th>Gender</th>
+    <th>Abilities</th>
+    <th>Actions</th>
+  </thead>
+  <tbody *ngFor="let pokemon of pokemons; let i = index">
+    <tr *ngIf="displayEdit !== pokemon.id">
+      <td>{{i}}</td>
+      <td>{{pokemon.name}}</td>
+      <td>{{pokemon.weight}}</td>
+      <td>{{pokemon.height}}</td>
+      <td>{{pokemon.gender}}</td>
+      <td>{{pokemon.abilities}}</td>
+      <td>
+        <div class="btn-group">
+          <button class="btn btn-sm btn-primary" (click)="showEdit(pokemon.id)">Update</button>
+          <button class="btn btn-sm btn-danger" (click)="deletePokemon(pokemon.id)">Delete</button>
+        </div>
+      </td>
+    </tr>
+    <tr *ngIf="displayEdit === pokemon.id">
+      <td colspan="8">
+        <app-update-pokemon [pokemon]="pokemon" (emitCancel)="hideEdit(event$)"></app-update-pokemon>
+      </td>
+    </tr>
+  </tbody>
+</table>

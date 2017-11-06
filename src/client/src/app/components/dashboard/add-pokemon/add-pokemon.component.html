@@ -1,0 +1,38 @@
+<form #addForm="ngForm" (ngSubmit)="addPokemon(addForm)">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <div class="card bg-light">
+        <div class="card-header">
+          <h5 class="card-title text-center">Add pokemon</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label>Name</label>
+              <input type="text" [ngModel]="name" name="name" class="form-control" required />
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Weight</label>
+              <input type="text" [ngModel]="weight" name="weight" class="form-control" required />
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Height</label>
+              <input type="text" [ngModel]="height" name="height" class="form-control" required />
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Abilities</label>
+              <input type="text" [ngModel]="abilities" name="abilities" class="form-control" required />
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Gender</label>
+              <input type="text" [ngModel]="gender" name="gender" class="form-control" required />
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-light text-center">
+          <button class="btn btn-info" type="submit" [disabled]="!addForm.valid">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

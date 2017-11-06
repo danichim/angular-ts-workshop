@@ -1,3 +1,4 @@
+import { PokemonsService } from './common/services/pokemons/pokemons.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +17,11 @@ import {AuthGuards} from "./common/routes/auth.guards";
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HttpModule } from '@angular/http';
+import { PokemonsComponent } from './components/dashboard/pokemons/pokemons.component';
+import { UpdatePokemonComponent } from './components/dashboard/update-pokemon/update-pokemon.component';
+import { AddPokemonComponent } from './components/dashboard/add-pokemon/add-pokemon.component'
+
 
 const environment = {
   production: false,
@@ -37,7 +43,10 @@ const environment = {
     HomeComponent,
     DashboardComponent,
     SignupComponent,
-    FooterComponent
+    FooterComponent,
+    PokemonsComponent,
+    UpdatePokemonComponent,
+    AddPokemonComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +54,10 @@ const environment = {
     AngularFireAuthModule,
     FormsModule,
     RouterModule.forRoot(routes, {useHash: true}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
-  providers: [AuthService, AuthGuards],
+  providers: [AuthService, AuthGuards, PokemonsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -73,7 +73,7 @@ export class AuthService {
     this.af.auth.signOut();
     localStorage.clear();
     this.router.navigate(['login']);
-     window.location.reload();
+    window.location.reload();
   }
 
 }

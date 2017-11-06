@@ -1,0 +1,25 @@
+<form #formData="ngForm" (ngSubmit)="updatePokemon(formData, pokemon.id)">
+  <div class="row">
+    <div class="col-sm-2 form-group">
+      <input type="text" [(ngModel)]="pokemon.name" name="name" class="form-control" required />
+    </div>
+    <div class="col-sm-2 form-group">
+      <input type="text" [(ngModel)]="pokemon.weight" name="weight" class="form-control" required />
+    </div>
+    <div class="col-sm-2 form-group">
+      <input type="text" [(ngModel)]="pokemon.height" name="height" class="form-control" required />
+    </div>
+    <div class="col-sm-2 form-group">
+      <input type="text" [(ngModel)]="pokemon.gender" name="gender" class="form-control" required />
+    </div>
+    <div class="col-sm-2 form-group">
+      <input type="text" [(ngModel)]="pokemon.abilities" name="abilities" class="form-control" required />
+    </div>
+    <div class="col-sm-2 form-group">
+      <div class="btn-group mt-1">
+        <button class="btn btn-sm btn-info" type="submit" [disabled]="!formData.valid">Save</button>
+        <button class="btn btn-sm btn-dark" (click)="cancelEdit()" [disabled]="!formData.valid">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

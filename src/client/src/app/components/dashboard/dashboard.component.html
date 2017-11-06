@@ -4,9 +4,11 @@
       <div class="card bg-light">
         <div class="card-header">
           <h3 class="float-left">Pokemons</h3>
+          <button class="btn btn-sm btn-primary float-right" (click)="showAdd()">{{btnText}}</button>
         </div>
         <div class="card-body">
-
+          <app-pokemons [pokemons]="pokemons" *ngIf="!displayAdd"></app-pokemons>
+          <app-add-pokemon *ngIf="displayAdd" (emitSave)="hideAdd(event$)"></app-add-pokemon>
         </div>
         <div class="card-footer bg-light"></div>
       </div>
