@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6" style="overflow: hidden">
+      <div class="card bg-default">
+        <div class="card-header">
+          <h3>Create account</h3>
+        </div>
+        <div class="card-body">
+          <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     name="email"
+                     aria-describedby="emailHelp"
+                     placeholder="Enter email"
+                     [ngModel]="email"
+                     required>
+              <small id="emailHelp" class="form-text text-muted">Use Assist mail.</small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password"
+                     class="form-control"
+                     id="password"
+                     name="password"
+                     placeholder="Password"
+                     [ngModel]="password"
+                     required>
+            </div>
+            <div class="alert alert-danger text-center" role="alert" [@toggleMessage]="errorState">
+              <b>{{errorMessage}}</b>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="!createForm.valid">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

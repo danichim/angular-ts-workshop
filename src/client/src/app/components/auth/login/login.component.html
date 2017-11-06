@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6" style="overflow: hidden">
+      <div class="card bg-default">
+        <div class="card-header">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     name="email"
+                     aria-describedby="emailHelp"
+                     placeholder="Enter email"
+                     [ngModel]="email"
+                     required>
+              <small id="emailHelp" class="form-text text-muted">Use Assist mail.</small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password"
+                     class="form-control"
+                     id="password"
+                     name="password"
+                     placeholder="Password"
+                     [ngModel]="password"
+                     required>
+            </div>
+            <div class="alert alert-danger text-center" role="alert" [@toggleMessage]="errorState">
+              <b>{{errorMessage}}</b>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="!loginForm.valid">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <a class="card-link btn-default btn-sm mt-2" routerLink="/signup">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
