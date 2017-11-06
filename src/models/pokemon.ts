@@ -1,35 +1,26 @@
-import { Equals } from './equals';
-import { Gender, validateGender } from '../constants/Gender';
+import { Gender, validateGender } from '../constants/Gender'
+import { Equals } from '../models/equals'
 
 export class Pokemon implements Equals<Pokemon> {
-    public id?: string;
-    public name: string;
-    public height: string;
-    public weight: string;
-    public gender: Gender;
-    public abilities: string;
+    public id?: string
+    public name: string
+    public height: string
+    public weight: string
+    public gender: string
+    public abilities: string
 
-    constructor(maybePokemon: Pokemon) {
-        this.id = maybePokemon.id
-        this.name = maybePokemon.name
-        this.height = maybePokemon.height
-        this.weight = maybePokemon.weight
-        validateGender(maybePokemon.gender)
-        this.gender = maybePokemon.gender
-        this.abilities = maybePokemon.abilities
+    constructor(name: string, height: string, weight: string, gender: Gender, abilities: string) {
+        this.name = name
+        this.height = height
+        this.weight = weight
+        validateGender(gender)
+        this.gender = gender
+        this.abilities = abilities
     }
-
-    /**
-     * canEquals: Pokemon
-     */
-    public canEquals(that: Pokemon): boolean {
+    public canEqual(that: Pokemon): boolean {
         return this.name === that.name
     }
-
-    /**
-     * equal: Pokemon
-     */
     public equals(that: Pokemon): boolean {
-        return this.canEquals(that)&& this.abilities === that.abilities
+        return this.canEqual(that) && this.weight === that.weight
     }
 }

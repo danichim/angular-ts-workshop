@@ -5,3 +5,28 @@ dist/
 .env/firebaseKey.json
 package-lock.json
 .log
+
+# Client
+/client/node_modules
+
+# compiled output
+/client/dist
+/client/tmp
+/client/out-tsc
+
+# misc
+/client/.sass-cache
+/client/connect.lock
+/client/coverage
+/client/libpeerconnection.log
+/client/npm-debug.log
+/client/testem.log
+/client/typings
+
+# e2e
+/client/e2e/*.js
+/client/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
